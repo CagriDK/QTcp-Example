@@ -3,14 +3,31 @@
 
 #include <QObject>
 #include <QTcpSocket>
+#include <QAbstractSocket>
 #include <QDebug>
 
-class QTcpSocket_t
+class QTcpSocket_t : public QObject
 {
+//    Q_OBJECT
 public:
-    explicit QTcpSocket_t(QString ipaddr):m_ipaddr(ipaddr){};
-    void connect();
+    QTcpSocket_t()=default;
+    explicit  QTcpSocket_t(QString ipaddr);
 
+    ~QTcpSocket_t();
+
+    void connectServer();
+
+signals:
+    void a1();
+    void a2();
+    void a3();
+    void a4();
+
+public slots:
+    void connected();
+    void disconnected();
+    void bytesWritten(qint64 bytes);
+    void readyRead();
 private:
     QTcpSocket *socket;
     QString m_ipaddr;
