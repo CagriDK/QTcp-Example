@@ -8,9 +8,9 @@
 
 class QTcpSocket_t : public QObject
 {
-//    Q_OBJECT
+    Q_OBJECT
 public:
-    QTcpSocket_t()=default;
+    QTcpSocket_t(){};
     explicit  QTcpSocket_t(QString ipaddr);
 
     ~QTcpSocket_t();
