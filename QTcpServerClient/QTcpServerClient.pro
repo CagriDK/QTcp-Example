@@ -9,6 +9,8 @@ CONFIG -= app_bundle
 
 SOURCES += \
         main.cpp \
+        qtcp_thread.cpp \
+        qtcpserver_t.cpp \
         qtcpsocket_t.cpp
 
 # Default rules for deployment.
@@ -17,4 +19,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 HEADERS += \
+    qtcp_thread.h \
+    qtcpserver_t.h \
     qtcpsocket_t.h
