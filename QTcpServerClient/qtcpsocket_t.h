@@ -18,10 +18,6 @@ public:
     void connectServer();
 
 signals:
-    void a1();
-    void a2();
-    void a3();
-    void a4();
 
 public slots:
     void connected();
